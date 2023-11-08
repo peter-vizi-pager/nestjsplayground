@@ -1,8 +1,10 @@
-import { Module } from '@nestjs/common';
+import { Module, Injectable } from '@nestjs/common';
 
-import { BModule } from './b.module';
+@Injectable()
+export class CService {}
 
 @Module({
-  imports: [BModule]
+  providers: [CService],
+  exports: [CService]
 })
 export class CModule {}
